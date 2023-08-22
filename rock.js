@@ -3,10 +3,27 @@ const choices = ["rock", "paper", "scissor"];
 function game(){
     //5 rounds of rock/paper/scissor; calculate scoreboard
 }
+let choiceP = getPlayerChoice();
+let choiceC = getComputerChoice();
 
-function playRound() {
+function playRound(choiceP, choiceC) {
     //code for round results
+    
+    if(choiceP === choiceC) {
+        return 'Tie';
+    } else if(
+        choiceP === 'rock' && choiceC === 'scissor' || 
+        choiceP === 'paper' && choiceC === 'rock' ||
+        choiceP === 'scissor' && choiceC === 'paper'
+        ) {
+            return 'Player';
+        } else {
+            return 'Computer';
+        }
+
 }
+
+
 
 function getComputerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
@@ -21,4 +38,4 @@ function getPlayerChoice() {
     }
 }
 
-console.log(getPlayerChoice());
+console.log(playRound(choiceP, choiceC));
