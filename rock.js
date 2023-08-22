@@ -9,11 +9,16 @@ function playRound() {
 }
 
 function getComputerChoice() {
-    //computer random choice
+    return choices[Math.floor(Math.random() * choices.length)];
 }
 
 function getPlayerChoice() {
-    //user input choice
-    let input = prompt("Choose 'rock', 'paper', or 'scissor'");
-    return input;
+    let input = prompt("Choose 'Rock', 'Paper', or 'Scissor'");
+    if(input === 'rock' || input === 'paper' || input === 'scissor') {
+        return input;
+    } else {
+        console.log('Invalid');
+    }
 }
+
+console.log(getPlayerChoice());
