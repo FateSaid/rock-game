@@ -2,13 +2,30 @@ const choices = ["rock", "paper", "scissor"];
 
 function game(){
     //5 rounds of rock/paper/scissor; calculate scoreboard
-}
-let choiceP = getPlayerChoice();
-let choiceC = getComputerChoice();
-
-function playRound(choiceP, choiceC) {
-    //code for round results
     
+        for(let i = 1; i <= 5; i++) {
+            playRound(i);
+        }
+        
+        
+}
+
+    
+
+
+
+function playRound(round) {
+    //code for round results
+    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
+    const winner = checkWinner(playerSelection, computerSelection)
+
+    
+    
+    
+}
+
+function checkWinner(choiceP, choiceC) {
     if(choiceP === choiceC) {
         return 'Tie';
     } else if(
@@ -19,7 +36,7 @@ function playRound(choiceP, choiceC) {
             return 'Player';
         } else {
             return 'Computer';
-        }
+    }
 
 }
 
@@ -39,3 +56,5 @@ function getPlayerChoice() {
 }
 
 console.log(playRound(choiceP, choiceC));
+console.log(game(playerScore, computerScore));
+
