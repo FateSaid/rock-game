@@ -1,7 +1,6 @@
 const choice = ['rock', 'paper', 'scissor'];
 
-let playerSelection = getPlayerChoice();
-let computerSelection = getComputerChoice();
+
 
 let playerScore = 0;
 let computerScore = 0;
@@ -62,6 +61,7 @@ function game() {
         roundScore();
         console.log(`Player: ${playerSelection}, Computer: ${computerSelection}`);
         console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+        console.log(`Round: ${i}`);
     }
 }
 
@@ -69,6 +69,6 @@ function game() {
     
 
 
-console.log(playRound(playerSelection, computerSelection));
+
 game();
 console.log(`Player: ${playerScore} Computer: ${computerScore}`);
