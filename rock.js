@@ -6,18 +6,36 @@ function getPlayerChoice() {
     if(playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissor') {
         return playerSelection;
     } else {
-        console.log("Invalid")
+        return ("Invalid")
     }
     
 }
 
 function getComputerChoice() {
-
+    
 
     let computerSelection;
-    computerSelection = Math.floor(Math.random() * 3) + 1;
+    computerSelection = choice[Math.floor(Math.random() * choice.length)];
+
     return computerSelection;
     
-}
-console.log(getPlayerChoice());
-console.log(getComputerChoice())
+} 
+
+function playRound(playerSelection, computerSelection) {
+    
+    if (playerSelection === computerSelection) {
+        return ('Tie');
+    } else if (playerSelection === 'rock' && computerSelection === 'scissor' ||
+               playerSelection === 'paper' && computerSelection === 'rock' ||
+               playerSelection === 'scissor' && computerSelection === 'paper') {
+                return ("Player wins!");
+               } else {
+                return ("Computer wins!");
+               }
+    }
+    
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
+console.log(playerSelection);
+console.log(computerSelection);
+console.log(playRound(playerSelection, computerSelection));
