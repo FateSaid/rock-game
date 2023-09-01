@@ -7,8 +7,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 function getPlayerChoice() {
-    let playerSelection;
-    playerSelection = prompt("Choose between 'Rock, 'Paper', or 'Scissor'.").toLowerCase();
+    let playerSelection = prompt("Choose between 'Rock, 'Paper', or 'Scissor'.").toLowerCase();
     if(playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissor') {
         return playerSelection;
     } else {
@@ -48,9 +47,22 @@ function roundScore() {
         return Number(computerScore++);
     } else if (playRound() === 'Player wins!') {
         return Number(playerScore++);
+    } else {
+        return 0;
     }
     
     
+}
+
+function game() {
+    for(let i = 0; i < 5; i++) {
+        playerSelection = getPlayerChoice();
+        computerSelection = getComputerChoice();
+        playRound();
+        roundScore();
+        console.log(`Player: ${playerSelection}, Computer: ${computerSelection}`);
+        console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+    }
 }
 
 
@@ -58,5 +70,5 @@ function roundScore() {
 
 
 console.log(playRound(playerSelection, computerSelection));
-roundScore();
+game();
 console.log(`Player: ${playerScore} Computer: ${computerScore}`);
