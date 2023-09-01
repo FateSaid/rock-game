@@ -1,5 +1,11 @@
 const choice = ['rock', 'paper', 'scissor'];
 
+let playerSelection = getPlayerChoice();
+let computerSelection = getComputerChoice();
+
+let playerScore = 0;
+let computerScore = 0;
+
 function getPlayerChoice() {
     let playerSelection;
     playerSelection = prompt("Choose between 'Rock, 'Paper', or 'Scissor'.").toLowerCase();
@@ -21,7 +27,8 @@ function getComputerChoice() {
     
 } 
 
-function playRound(playerSelection, computerSelection) {
+function playRound() {
+   
     
     if (playerSelection === computerSelection) {
         return ('Tie');
@@ -32,10 +39,24 @@ function playRound(playerSelection, computerSelection) {
                } else {
                 return ("Computer wins!");
                }
+} 
+
+function roundScore() {
+    
+    if (playRound() === 'Computer wins!') {
+        
+        return Number(computerScore++);
+    } else if (playRound() === 'Player wins!') {
+        return Number(playerScore++);
     }
     
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
-console.log(playerSelection);
-console.log(computerSelection);
+    
+}
+
+
+    
+
+
 console.log(playRound(playerSelection, computerSelection));
+roundScore();
+console.log(`Player: ${playerScore} Computer: ${computerScore}`);
