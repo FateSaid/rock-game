@@ -54,12 +54,13 @@ function roundScore() {
 }
 
 function game() {
-    for(let i = 0; i < 5; i++) {
+    for(let i = 1; i < 6; i++) {
         playerSelection = getPlayerChoice();
         computerSelection = getComputerChoice();
         playRound();
         roundScore();
         console.log(`Player: ${playerSelection}, Computer: ${computerSelection}`);
+        console.log(playRound());
         console.log(`Player: ${playerScore} Computer: ${computerScore}`);
         console.log(`Round: ${i}`);
     }
@@ -71,4 +72,3 @@ function game() {
 
 
 game();
-console.log(`Player: ${playerScore} Computer: ${computerScore}`);
