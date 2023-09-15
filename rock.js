@@ -15,6 +15,7 @@ let computerScore = 0;
 
 const btn = document.querySelectorAll('.playerChoice');
 btn.forEach(button => button.addEventListener('click', () => {
+    
     playerSelection = button.textContent;
     computerSelection = getComputerChoice();
     result = playRound();
@@ -24,9 +25,17 @@ btn.forEach(button => button.addEventListener('click', () => {
     roundScore();
     scoreText.textContent = `Player Score: ${playerScore}   Computer Score: ${computerScore}`;
     winnerText.textContent = winner();
+    if(playerScore === 5 || computerScore === 5) return buttonDisable();
+    
     
 
 }));
+
+function buttonDisable(){
+    btn.forEach(playerChoice => {
+        playerChoice.disabled = true;
+    })
+}
 
 function getComputerChoice() {
     
