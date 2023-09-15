@@ -23,6 +23,8 @@ btn.forEach(button => button.addEventListener('click', () => {
     resultText.textContent = result;
     roundScore();
     scoreText.textContent = `Player Score: ${playerScore}   Computer Score: ${computerScore}`;
+    winnerText.textContent = winner();
+    
 
 }));
 
@@ -65,5 +67,8 @@ function roundScore() {
 }
 
 
-
+function winner(){
+    if(playerScore === 5) return 'Player wins the game';
+    else if(computerScore === 5) return 'Computer wins the game';
+}
 
